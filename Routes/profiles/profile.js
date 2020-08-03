@@ -1,12 +1,17 @@
 const express = require("express");
 const router = express.Router();
-
+const multer = require("multer");
 //load Profile Schema Model;
 const Profile = require("../../Model/Profile");
-
+const {storage} = require("../../config/multer");
 //@ http method GET
 //@description its profile get information
 //@access PUBLIC
+
+var upload = multer({
+  storage
+})
+
 router.get("/", (req, res) => {
   res.send("i am profile router");
 });
@@ -19,7 +24,9 @@ router.get("/create-profile", (req, res) => {
 // @description CREATE PROFILE DATA
 // @access PRIVATE
 
-router.post("/create-profile", (req, res) => {
+
+
+router.post("/create-profile",upload.single("photo") ,(req, res) => {
   let {
     firstname,
     lastname,
@@ -32,6 +39,7 @@ router.post("/create-profile", (req, res) => {
     landmark,
   } = req.body;
   let newProfile = {
+   photo:req.file,
     firstname,
     lastname,
     phone,

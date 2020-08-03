@@ -1,0 +1,35 @@
+<section>
+    <article>
+        <table>
+            <thead>
+                <tr>
+                    <th>Photo</th>
+                    <th>FirstName</th>
+                    <th>Lastnme</th>
+                    <th>Phone</th>
+                    <th>Adderss</th>
+                    <th>Alt Address</th>
+                    <th>Gender</th>
+                    <th>Country</th>
+                    <th>Pincode</th>
+                    <th>Landmark</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each profiles}}
+                <td> {{photo}} </td>
+                <td> {{firstname}} </td>
+                <td> {{lastname}} </td>
+                <td>{{phone}}</td>
+                <td> {{address}} </td>
+                <td> {{alt_address}} </td>
+                <td> {{gender}} </td>
+                <td >{{country}} </td>
+                <td>{{pincode}} </td>
+                <td>{{landmark}} </td>
+                {{else}}
+                {{/each}}
+            </tbody>
+        </table>
+    </article>
+</section>
