@@ -1,19 +1,23 @@
-<form action="/profile/create-profile" method="post" enctype="multipart/form-data" >
+<form action="/profile/create-profile/{{editProfile._id}}?_method=PUT" method="post" enctype="multipart/form-data">
     <div class="row">
         <div class="col-md-3 my-2">
-            <input type="file" class="form-control" name="photo" placeholder="photo" >
+            <input type="file" class="form-control" name="photo" placeholder="photo">
         </div>
         <div class="col-md-3 my-2">
-            <input type="text" class="form-control" name="firstname" placeholder="firstname" required>
+            <input type="text" class="form-control" value={{editProfile.firstname}} name="firstname"
+                placeholder="firstname" required>
         </div>
         <div class="col-md-3 my-2">
-            <input type="text" class="form-control" name="lastname" placeholder="lastname" required />
+            <input type="text" class="form-control" value={{editProfile.lastname}} name="lastname"
+                placeholder="lastname" required />
         </div>
         <div class="col-md-3 my-2">
-            <input type="text" class="form-control" name="phone" placeholder="phone number" required>
+            <input type="text" class="form-control" value={{editProfile.phone}} name="phone" placeholder="phone number"
+                required>
         </div>
         <div class="col-md-6 my-2">
-            <textarea name="address" cols="10" rows="10" class="form-control" placeholder="address" required></textarea>
+            <textarea name="address" value={{editProfile.address}} cols="10" rows="10" class="form-control"
+                placeholder="address" required></textarea>
         </div>
         <div class="col-md-6 my-2">
             <textarea name="alt_address" cols="10" rows="10" class="form-control"
@@ -22,7 +26,7 @@
         </div>
 
         <div class="col-md-4 my-2">
-            <input type="radio" class="form-inline-radio"  name="gender" value="male">Male
+            <input type="radio" class="form-inline-radio" name="gender" value="male">Male
             <input type="radio" class="form-inline-radio" name="gender" value="female">Female
         </div>
         <div class="col-md-4 my-2">

@@ -14,19 +14,24 @@
 
 <body>
     
-<header>
-        {{> _myntra_navbar}}
-    </header>
-    {{{
+    <section>
+        <article>
+            <header>
+                {{> _myntra_navbar}}
+            </header>
+        </article>
+    </section>
+
+   <div class="container">
+        {{{
         body
     }}}
+   </div>
     
     <script src="../../jquery/dist/jquery.js" ></script>
     <script src="../../popper.js/dist/popper.js" ></script>
     <script src="../../js/client.js"></script>
-   <div class="container">
-        <h1>Home</h1>
-   </div>
+   
 
 </body>
 
